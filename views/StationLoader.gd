@@ -1,7 +1,7 @@
 extends Control
 
 const MODULE_COMPONENT:PackedScene = preload("res://views/components/Module.tscn")
-const STATION_SCENE:PackedScene = preload("res://actors/Station.tscn")
+const STATION_SCENE:PackedScene = preload("res://actors/StationLayout.tscn")
 
 @onready var _load:Button = $"./HBoxContainer/Load"
 @onready var _modules:GridContainer = $"./HBoxContainer/Modules"
@@ -25,7 +25,7 @@ func _load_stations() -> void:
 
 func _on_load_pressed() -> void:
   if _selected_station_item:
-    var _station_nodes = get_tree().get_nodes_in_group("stations")
+    var _station_nodes = get_tree().get_nodes_in_group("station_layouts")
     for _station in _station_nodes:
       _station.queue_free()
 
@@ -34,9 +34,12 @@ func _on_load_pressed() -> void:
     get_tree().get_root().add_child(_new_station)
     
     _station_name.text = _station_resources[_selected_station_item].station_name
+    
+    await _new_station.station_loaded
+    Store.set_state("selected_station", _new_station)
 
 func _on_save_pressed() -> void:
-  var _station_nodes = get_tree().get_nodes_in_group("stations")
+  var _station_nodes = get_tree().get_nodes_in_group("station_layouts")
   for _station in _station_nodes:
     _station.set_station_name(_station_name.text)
     _station.save_station()

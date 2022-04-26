@@ -8,7 +8,7 @@ func _initialize() -> void:
   get_tree().get_root().add_child(_tilemap_indicator)
 
 func _process(delta):
-  var _station_tilemap:TileMap = get_tree().get_nodes_in_group("station_tilemap")[0]
+  var _station_tilemap:TileMap = get_tree().get_nodes_in_group("station_tilemaps")[0]
   
   if _station_tilemap:
     var _mouse_position:Vector2 = get_global_mouse_position()
@@ -21,7 +21,7 @@ func _ready():
 
 func _unhandled_input(event):
   if event.is_action_pressed("place-module"):
-    var _station = get_tree().get_nodes_in_group("stations")[0]
+    var _station = get_tree().get_nodes_in_group("station_layouts")[0]
     
     if _station && Store.state.selected_module:
       var _module_data:ModuleData = ModuleData.new()

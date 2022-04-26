@@ -5,6 +5,7 @@ signal state_changed(state_key, substate)
 var persistent_store:PersistentStore
 var state: Dictionary = {
   "selected_module": null,
+  "selected_station": null,
 }
 
 func save_persistent_store() -> void:
