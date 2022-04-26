@@ -3,7 +3,9 @@ extends Node
 signal state_changed(state_key, substate)
 
 var persistent_store:PersistentStore
-var state: Dictionary = {}
+var state: Dictionary = {
+  "selected_module": null,
+}
 
 func save_persistent_store() -> void:
   if ResourceSaver.save(ClientConstants.CLIENT_PERSISTENT_STORE_PATH, persistent_store) != OK:

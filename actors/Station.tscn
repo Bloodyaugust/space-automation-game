@@ -11,3 +11,5 @@ script = ExtResource( "1_edtxa" )
 [node name="TileMap" type="TileMap" parent="." groups=["station_tilemap"]]
 tile_set = SubResource( "TileSet_pj2fx" )
 format = 2
+
+[node name="Modules" type="Node2D" parent="."]

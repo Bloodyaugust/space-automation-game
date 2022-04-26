@@ -1,8 +1,10 @@
 extends Control
 
+const MODULE_COMPONENT:PackedScene = preload("res://views/components/Module.tscn")
 const STATION_SCENE:PackedScene = preload("res://actors/Station.tscn")
 
 @onready var _load:Button = $"./HBoxContainer/Load"
+@onready var _modules:GridContainer = $"./HBoxContainer/Modules"
 @onready var _save:Button = $"./HBoxContainer/Save"
 @onready var _stations:ItemList = $"./HBoxContainer/Stations"
 @onready var _station_name:LineEdit = $"./HBoxContainer/StationName"
@@ -44,9 +46,17 @@ func _on_save_pressed() -> void:
 func _on_stations_item_selected(item:int) -> void:
   _selected_station_item = _stations.get_item_text(item)
 
+func _populate_modules() -> void:
+  for _module in ModuleController.modules:
+    var _new_module_component = MODULE_COMPONENT.instantiate()
+    
+    _new_module_component.module_data = _module
+    _modules.add_child(_new_module_component)
+
 func _ready():
   _load.connect("pressed", _on_load_pressed)
   _save.connect("pressed", _on_save_pressed)
   _stations.connect("item_selected", _on_stations_item_selected)
   
   _load_stations()
+  call_deferred("_populate_modules")

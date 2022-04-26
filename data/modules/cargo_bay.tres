@@ -1,0 +1,18 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://dxapq7qq5m7vv"]
+
+[ext_resource type="Script" path="res://scripts/resources/ModuleDefinition.gd" id="1_pp63v"]
+
+[resource]
+script = ExtResource( "1_pp63v" )
+cargo_capacity = 10.0
+cargo_rate = 1.0
+cost = {
+"metal": 1.0
+}
+consumes = {
+"energy": 1.0
+}
+generates = null
+id = "cargo_bay"
+name = "Cargo Bay"
+version = "0.1"

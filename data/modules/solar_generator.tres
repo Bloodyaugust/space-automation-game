@@ -1,0 +1,18 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://cctfngcynenwa"]
+
+[ext_resource type="Script" path="res://scripts/resources/ModuleDefinition.gd" id="1_nn1vy"]
+
+[resource]
+script = ExtResource( "1_nn1vy" )
+cargo_capacity = null
+cargo_rate = null
+cost = {
+"metal": 1.0
+}
+consumes = null
+generates = {
+"energy": 1.0
+}
+id = "solar_generator"
+name = "Solar Generator"
+version = "0.1"

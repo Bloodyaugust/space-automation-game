@@ -10,6 +10,16 @@ config_version=5
 
 _global_script_classes=[{
 "base": "Resource",
+"class": &"ModuleData",
+"language": &"GDScript",
+"path": "res://scripts/resources/ModuleData.gd"
+}, {
+"base": "Resource",
+"class": &"ModuleDefinition",
+"language": &"GDScript",
+"path": "res://scripts/resources/ModuleDefinition.gd"
+}, {
+"base": "Resource",
 "class": &"PersistentStore",
 "language": &"GDScript",
 "path": "res://scripts/classes/PersistentStore.gd"
@@ -20,6 +30,8 @@ _global_script_classes=[{
 "path": "res://scripts/resources/StationData.gd"
 }]
 _global_script_class_icons={
+"ModuleData": "",
+"ModuleDefinition": "",
 "PersistentStore": "",
 "StationData": ""
 }
@@ -36,8 +48,17 @@ config/features=PackedStringArray("4.0", "Vulkan Clustered")
 GDUtil="*res://lib/util/GDUtil.gd"
 ClientConstants="*res://constants/ClientConstants.gd"
 GameConstants="*res://constants/GameConstants.gd"
+ModuleController="*res://scripts/controllers/ModuleController.gd"
 Store="*res://autoloads/Store.gd"
 
 [display]
 
 window/dpi/allow_hidpi=false
+
+[input]
+
+place-module={
+"deadzone": 0.5,
+"events": [Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"store_command":true,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"command_pressed":false,"button_mask":0,"position":Vector2(0, 0),"global_position":Vector2(0, 0),"factor":1.0,"button_index":1,"pressed":false,"double_click":false,"script":null)
+]
+}
