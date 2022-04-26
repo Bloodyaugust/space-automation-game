@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://cwa6n4l30wnln"]
+
+[ext_resource type="PackedScene" path="res://lib/BetterCam.tscn" id="1_0ps78"]
+[ext_resource type="PackedScene" uid="uid://ddn0np8ch2udy" path="res://actors/Station.tscn" id="2_ymxig"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="BetterCam" parent="." instance=ExtResource( "1_0ps78" )]
+
+[node name="Station" parent="." instance=ExtResource( "2_ymxig" )]
+station_data_to_load = "test"
+
+[node name="Station2" parent="." instance=ExtResource( "2_ymxig" )]
+position = Vector2(-85, -68)
+station_data_to_load = "test-2"
