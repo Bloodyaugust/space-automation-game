@@ -11,7 +11,7 @@ __meta__ = {
 }
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
-offset_right = 366.0
+offset_right = 502.0
 offset_bottom = 40.0
 
 [node name="Stations" type="ItemList" parent="HBoxContainer"]
@@ -33,5 +33,6 @@ text = "Save"
 
 [node name="StationName" type="LineEdit" parent="HBoxContainer"]
 offset_left = 302.0
-offset_right = 366.0
+offset_right = 502.0
 offset_bottom = 40.0
+rect_min_size = Vector2(200, 0)

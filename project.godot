@@ -37,3 +37,7 @@ GDUtil="*res://lib/util/GDUtil.gd"
 ClientConstants="*res://constants/ClientConstants.gd"
 GameConstants="*res://constants/GameConstants.gd"
 Store="*res://autoloads/Store.gd"
+
+[display]
+
+window/dpi/allow_hidpi=false

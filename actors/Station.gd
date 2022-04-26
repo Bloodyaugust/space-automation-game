@@ -8,8 +8,8 @@ func add_node(node:Variant) -> void:
   _station_data.nodes.append(node)
   save_station()
 
-func load_station(station_name:String) -> void:
-  _station_data = load("user://stations/" + station_name + ".tres")
+func load_station(station_data:StationData) -> void:
+  _station_data = station_data
 
 func save_station() -> void:
   print("Saving station: " + _station_data.station_name)
