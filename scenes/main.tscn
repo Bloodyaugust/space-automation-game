@@ -1,6 +1,15 @@
-[gd_scene format=3 uid="uid://bdjqf0c48yrle"]
+[gd_scene load_steps=4 format=3 uid="uid://bdjqf0c48yrle"]
+
+[ext_resource type="PackedScene" uid="uid://s8rqybge0wqn" path="res://scripts/controllers/PlacementController.tscn" id="1_yxx6r"]
+[ext_resource type="PackedScene" uid="uid://bsttlpu3bo1iv" path="res://actors/Station.tscn" id="2_4tdvi"]
+[ext_resource type="PackedScene" uid="uid://dwvxrx3kexrwd" path="res://views/StationLoader.tscn" id="3_kt3d6"]
 
 [node name="Node2D" type="Node2D"]
 
-[node name="TileMap" type="TileMap" parent="."]
-format = 2
+[node name="PlacementController" parent="." instance=ExtResource( "1_yxx6r" )]
+
+[node name="Station" parent="." instance=ExtResource( "2_4tdvi" )]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="StationLoader" parent="CanvasLayer" instance=ExtResource( "3_kt3d6" )]

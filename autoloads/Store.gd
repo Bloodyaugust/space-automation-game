@@ -18,7 +18,12 @@ func _initialize():
   pass
 
 func _ready():
-  if Directory.new().file_exists(ClientConstants.CLIENT_PERSISTENT_STORE_PATH):
+  var _dir:Directory = Directory.new()
+
+  if !_dir.dir_exists("user://stations/"):
+    _dir.make_dir("user://stations/")
+
+  if _dir.file_exists(ClientConstants.CLIENT_PERSISTENT_STORE_PATH):
     persistent_store = load(ClientConstants.CLIENT_PERSISTENT_STORE_PATH)
 
   if !persistent_store:

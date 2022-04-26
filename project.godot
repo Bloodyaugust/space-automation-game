@@ -13,20 +13,27 @@ _global_script_classes=[{
 "class": &"PersistentStore",
 "language": &"GDScript",
 "path": "res://scripts/classes/PersistentStore.gd"
+}, {
+"base": "Resource",
+"class": &"StationData",
+"language": &"GDScript",
+"path": "res://scripts/resources/StationData.gd"
 }]
 _global_script_class_icons={
-"PersistentStore": ""
+"PersistentStore": "",
+"StationData": ""
 }
 
 [application]
 
 config/name="Space-automation-game"
+run/main_scene="res://scenes/main.tscn"
 config/icon="res://icon.png"
 config/features=PackedStringArray("4.0", "Vulkan Clustered")
 
 [autoload]
 
-GdUtil="*res://lib/util/GDUtil.gd"
+GDUtil="*res://lib/util/GDUtil.gd"
 ClientConstants="*res://constants/ClientConstants.gd"
 GameConstants="*res://constants/GameConstants.gd"
 Store="*res://autoloads/Store.gd"

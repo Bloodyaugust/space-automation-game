@@ -17,6 +17,20 @@ static func free_children(node):
   for n in node.get_children():
       n.free()
 
+static func get_files_in_directory(path:String) -> Array:
+  var _dir:Directory = Directory.new()
+  var _files:Array = []
+  
+  if _dir.open(path) == OK:
+    _dir.list_dir_begin()
+    var _file_name:String = _dir.get_next()
+    while _file_name != "":
+      if !_dir.current_is_dir():
+        _files.append(_file_name)
+      _file_name = _dir.get_next()
+  
+  return _files
+
 static func queue_free_children(node):
   for n in node.get_children():
       n.queue_free()
