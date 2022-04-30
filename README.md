@@ -3,4 +3,4 @@
 Like factorio, but simpler, in space
 
 ## Godot Version
-Godot_v4.0-alpha2
+Godot_v4.0-alpha7

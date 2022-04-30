@@ -1,10 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://ddn0np8ch2udy"]
+[gd_scene load_steps=2 format=3 uid="uid://ddn0np8ch2udy"]
 
 [ext_resource type="Script" path="res://actors/Station.gd" id="1_edtxa"]
-[ext_resource type="Texture2D" uid="uid://cbf8cavd20moy" path="res://icon.png" id="2_cxqqo"]
 
 [node name="Station" type="Node2D" groups=["stations"]]
 script = ExtResource( "1_edtxa" )
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource( "2_cxqqo" )
